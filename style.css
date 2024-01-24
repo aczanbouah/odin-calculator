@@ -18,12 +18,8 @@ body {
   justify-content: flex-end;
   align-items: center;
   padding: 18px;
-  background: rgb(244, 246, 249);
-  background: linear-gradient(
-    180deg,
-    rgba(244, 246, 249, 1) 0%,
-    rgba(219, 226, 234, 1) 100%
-  );
+  background: #f4f6f9;
+  background: linear-gradient(180deg, #f4f6f9 0%, #dbe2ea 100%);
 }
 
 .display-value {
@@ -38,12 +34,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: rgb(249, 251, 252);
-  background: linear-gradient(
-    180deg,
-    rgba(249, 251, 252, 1) 0%,
-    rgba(231, 236, 241, 1) 100%
-  );
+  background: #f9fbfc;
+  background: linear-gradient(180deg, #f9fbfc 0%, #e7ecf1 100%);
 }
 
 .btn {
@@ -54,6 +46,7 @@ body {
   height: 75px;
   width: 75px;
   font-weight: 600;
+  transition: 200ms;
 }
 
 .operator {
@@ -70,10 +63,13 @@ body {
 
 .equal {
   color: #eaf6f6;
-  background: rgb(55, 186, 171);
-  background: linear-gradient(
-    180deg,
-    rgba(55, 186, 171, 1) 0%,
-    rgba(44, 135, 150, 1) 100%
-  );
+  background: #37baab;
+  background: linear-gradient(180deg, #37baab 0%, #2c8796 100%);
+}
+
+.btn:hover {
+  transition: 200ms;
+  font-size: 26px;
+  cursor: pointer;
+  background-color: #d7dfe9;
 }
