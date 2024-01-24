@@ -18,6 +18,10 @@ function divide(num1, num2) {
   return parseInt(num1) / parseInt(num2);
 }
 
+function percentage(num1, num2) {
+  return ((parseInt(num1) / parseInt(num2)) * 100).toFixed(2);
+}
+
 function operate(num1, op, num2) {
   switch (op) {
     case "+":
@@ -28,5 +32,7 @@ function operate(num1, op, num2) {
       return multiply(num1, num2);
     case "/":
       return divide(num1, num2);
+    case "%":
+      return percentage(num1, num2);
   }
 }

@@ -65,6 +65,13 @@ body {
   color: #eaf6f6;
   background: #37baab;
   background: linear-gradient(180deg, #37baab 0%, #2c8796 100%);
+  transition: 200ms;
+}
+
+.equal:hover {
+  background: #37baab;
+  background: linear-gradient(0deg, #37baab 0%, #2c8796 100%);
+  transition: 200ms;
 }
 
 .btn:hover {
