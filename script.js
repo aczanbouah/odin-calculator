@@ -2,6 +2,7 @@ let firstNumber = 0;
 let operator = "";
 let secondNumber = 0;
 let displayValue = 0;
+let result = 0;
 
 const clearBtn = document.querySelector(".clear");
 clearBtn.addEventListener("click", clear);
@@ -14,6 +15,25 @@ allNumberButtons.forEach((btn) => {
     displayValue += e.target.dataset.value;
     updateDisplay();
   });
+});
+
+const allOperatorButtons = document.querySelectorAll(".operator");
+allOperatorButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    firstNumber = parseInt(displayValue);
+    operator = e.target.dataset.value;
+    displayValue = secondNumber;
+    updateDisplay();
+  });
+});
+
+const equalsBtn = document.querySelector(".equal");
+equalsBtn.addEventListener("click", () => {
+  secondNumber = displayValue;
+  result = operate(firstNumber, operator, secondNumber);
+  displayValue = result;
+  updateDisplay();
+  secondNumber = 0;
 });
 
 function add(num1, num2) {
@@ -66,5 +86,6 @@ function clear() {
   operator = "";
   secondNumber = 0;
   displayValue = 0;
+  result = 0;
   updateDisplay();
 }
