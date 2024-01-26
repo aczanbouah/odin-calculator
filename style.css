@@ -4,6 +4,8 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  background-color: #d1dae5;
 }
 
 .calculator-container {
@@ -11,6 +13,7 @@ body {
   flex-direction: column;
   height: 500px;
   width: 300px;
+  border: 1px solid #000;
 }
 
 .display {
@@ -47,6 +50,13 @@ body {
   width: 75px;
   font-weight: 600;
   transition: 200ms;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .operator {
