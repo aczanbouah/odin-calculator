@@ -9,6 +9,16 @@ clearBtn.addEventListener("click", clear);
 const numberValue = document.querySelector(".display-value");
 updateDisplay();
 
+const decimalBtn = document.querySelector(".decimal");
+decimalBtn.addEventListener("click", handleDecimal);
+
+function handleDecimal() {
+  if (!displayValue.includes(".")) {
+    displayValue += ".";
+    updateDisplay();
+  }
+}
+
 const allNumberButtons = document.querySelectorAll(".number");
 allNumberButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -66,7 +76,7 @@ function percentage(num1, num2) {
 }
 
 function power(num1, num2) {
-  return parseInt(num1) ** parseInt(num2);
+  return Number(num1) ** Number(num2);
 }
 
 function operate(num1, op, num2) {
@@ -88,8 +98,10 @@ function operate(num1, op, num2) {
 
 function updateDisplay() {
   if (!Number.isInteger(Number(displayValue))) {
-    numberValue.innerText = Number(displayValue).toFixed(2);
-  } else numberValue.innerText = Number(displayValue);
+    numberValue.innerText = parseFloat(displayValue).toFixed(2);
+  } else {
+    numberValue.innerText = Number(displayValue);
+  }
 }
 
 function clear() {
