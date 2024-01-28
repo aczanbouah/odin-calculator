@@ -97,10 +97,11 @@ function operate(num1, op, num2) {
 }
 
 function updateDisplay() {
-  if (!Number.isInteger(Number(displayValue))) {
-    numberValue.innerText = parseFloat(displayValue).toFixed(2);
+  let floatValue = parseFloat(displayValue);
+  if (Number.isInteger(floatValue)) {
+    numberValue.innerText = floatValue;
   } else {
-    numberValue.innerText = Number(displayValue);
+    numberValue.innerText = floatValue.toFixed(2);
   }
 }
 
