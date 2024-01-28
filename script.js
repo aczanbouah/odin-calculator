@@ -3,7 +3,6 @@ let operator = "";
 let secondNumber = 0;
 let displayValue = 0;
 let result = 0;
-let tempNumber = 0;
 
 const clearBtn = document.querySelector(".clear");
 clearBtn.addEventListener("click", clear);
@@ -28,7 +27,7 @@ allOperatorButtons.forEach((btn) => {
       operator = e.target.dataset.value;
       displayValue = secondNumber;
     } else {
-      firstNumber = parseInt(displayValue);
+      firstNumber = Number(displayValue);
       operator = e.target.dataset.value;
       updateDisplay();
       displayValue = secondNumber;
@@ -47,27 +46,27 @@ equalsBtn.addEventListener("click", () => {
 });
 
 function add(num1, num2) {
-  return parseInt(num1) + parseInt(num2);
+  return Number(num1) + Number(num2);
 }
 
 function subtract(num1, num2) {
-  return parseInt(num1) - parseInt(num2);
+  return Number(num1) - Number(num2);
 }
 
 function multiply(num1, num2) {
-  return parseInt(num1) * parseInt(num2);
+  return Number(num1) * Number(num2);
 }
 
 function divide(num1, num2) {
-  return parseInt(num1) / parseInt(num2);
+  return Number(num1) / Number(num2);
 }
 
 function percentage(num1, num2) {
-  return ((parseInt(num1) / parseInt(num2)) * 100).toFixed(2);
+  return ((Number(num1) / Number(num2)) * 100).toFixed(2);
 }
 
 function power(num1, num2) {
-  return parseInt(num1) ^ parseInt(num2);
+  return parseInt(num1) ** parseInt(num2);
 }
 
 function operate(num1, op, num2) {
@@ -88,7 +87,9 @@ function operate(num1, op, num2) {
 }
 
 function updateDisplay() {
-  numberValue.innerText = parseInt(displayValue);
+  if (!Number.isInteger(Number(displayValue))) {
+    numberValue.innerText = Number(displayValue).toFixed(2);
+  } else numberValue.innerText = Number(displayValue);
 }
 
 function clear() {
